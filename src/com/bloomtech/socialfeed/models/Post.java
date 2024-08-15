@@ -1,14 +1,16 @@
 package com.bloomtech.socialfeed.models;
 
+import java.time.LocalDateTime;
+
 public class Post {
     private String username;
-    private String postedon; //TODO: Convert type to LocalDateTime
+    private LocalDateTime postedon; // Converted type to LocalDateTime
     private String body;
 
     public Post() {
     }
 
-    public Post(String username, String postedon, String body) {
+    public Post(String username, LocalDateTime postedon, String body) {
         this.username = username;
         this.postedon = postedon;
         this.body = body;
@@ -22,11 +24,11 @@ public class Post {
         this.username = username;
     }
 
-    public String getPostedon() {
+    public LocalDateTime getPostedon() {
         return postedon;
     }
 
-    public void setPostedon(String postedon) {
+    public void setPostedon(LocalDateTime postedon) {
         this.postedon = postedon;
     }
 
@@ -42,7 +44,7 @@ public class Post {
     public String toString() {
         return "Post{" +
                 "username='" + username + '\'' +
-                ", postedon='" + postedon + '\'' +
+                ", postedon=" + postedon +
                 ", body='" + body + '\'' +
                 '}';
     }

@@ -9,13 +9,15 @@ public class UserInfoValidator implements Validator {
     private boolean isValidUsername(String username) {
         //TODO: validate username begins with an uppercase letter, is at least 4 characters long, and only contains
         //letters, numbers, and underscores
-        return true;
+        String usernameRule = "^[A-Z][A-Za-z0-9_]{3,}$";
+        return username.matches(usernameRule);
     }
 
     private boolean isValidPassword(String password) {
         //TODO: validate password contains at least 8 characters, an uppercase, and a lowercase letter.
         //valid symbols include: !@#$%^&*
-        return true;
+        String passwordRule = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)[A-Za-z\\d!@#$%^&*]{8,}$";
+        return password.matches(passwordRule);
     }
 
     @Override
