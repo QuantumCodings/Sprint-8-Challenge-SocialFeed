@@ -9,6 +9,7 @@ public class UserInfoValidator implements Validator {
     private boolean isValidUsername(String username) {
         //TODO: validate username begins with an uppercase letter, is at least 4 characters long, and only contains
         //letters, numbers, and underscores
+        //first parts A-Z makes the first letter
         String usernameRule = "^[A-Z][A-Za-z0-9_]{3,}$";
         return username.matches(usernameRule);
     }
